@@ -11,7 +11,7 @@ const Books = () => {
     }, []);
     return (
         <div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4 mb-4">
         {AllBooks.map(SingleBook => <Book key={SingleBook.id} book={SingleBook} />)}
         </div>
         </div>
