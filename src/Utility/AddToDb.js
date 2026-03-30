@@ -20,4 +20,4 @@ const addToDb = (id) =>{
         localStorage.setItem('readList', data);
     }
 }
-export { addToDb }
+export { addToDb, getStoredDb} 
