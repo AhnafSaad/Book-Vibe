@@ -1,11 +1,17 @@
 import React from "react";
-import { Link } from "react-router";
+import { NavLink, Link } from "react-router";
 
 const Navbar = () => {
     const links = <>
-    <Link to= "/"> <li className="m-2">Home</li> </Link>
-    <Link to= "/about"> <li className="m-2">About</li> </Link>
-    <Link to= "/readList"> <li className="m-2">Read List</li> </Link>
+    <NavLink to="/" className={({ isActive }) => isActive ? "m-2 text-[#23BE0A] font-bold border-b-2 border-[#23BE0A] pb-1" : "m-2 hover:text-[#23BE0A] transition-colors"}>
+      <li>Home</li>
+    </NavLink>
+    <NavLink to="/about" className={({ isActive }) => isActive ? "m-2 text-[#23BE0A] font-bold border-b-2 border-[#23BE0A] pb-1" : "m-2 hover:text-[#23BE0A] transition-colors"}>
+      <li>About</li>
+    </NavLink>
+    <NavLink to="/readList" className={({ isActive }) => isActive ? "m-2 text-[#23BE0A] font-bold border-b-2 border-[#23BE0A] pb-1" : "m-2 hover:text-[#23BE0A] transition-colors"}>
+      <li>Read List</li>
+    </NavLink>
     </>
     return (
       <div className="navbar bg-base-100 shadow-sm">
@@ -20,15 +26,20 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Book Vibe</a>
+    <Link to="/" className="btn btn-ghost text-xl font-bold text-[#23BE0A]">Book Vibe</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
         {links}
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Button</a>
+  <div className="navbar-end gap-2">
+    <Link to="/login">
+      <button className="btn bg-[#23BE0A] hover:bg-[#1fa308] text-white border-none">Sign In</button>
+    </Link>
+    <Link to="/signup">
+      <button className="btn bg-[#50B1C9] hover:bg-[#3d9cb4] text-white border-none">Sign Up</button>
+    </Link>
   </div>
 </div>
     );
